@@ -1,0 +1,25 @@
+<annotation>
+  <folder>images</folder>
+  <filename>img4.png</filename>
+  <path>images\img4.png</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>779</width>
+    <height>1000</height>
+    <depth>0</depth>
+  </size>
+  <object>
+    <name>triangle_2</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>17</xmin>
+      <ymin>401</ymin>
+      <xmax>211</xmax>
+      <ymax>619</ymax>
+    </bndbox>
+  </object>
+</annotation>
