@@ -3,7 +3,7 @@ from inference import EmbeddingModel
 
 def test_infer():
     model = EmbeddingModel()
-    image = Image.open("data/test/images/100a_0.png")
+    image = Image.open("data/test/images/99d_16.bmp")
     embeddings = model.predict(image=image)
     print(embeddings)
 
