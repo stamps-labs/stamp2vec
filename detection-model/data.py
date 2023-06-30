@@ -80,7 +80,7 @@ def get_datasets(data_path=ANNOTATIONS_PATH, train_transforms=None, val_transfor
             A.Resize(height=448, width=448),
             A.HorizontalFlip(p=0.5),
             A.VerticalFlip(p=0.5),
-            A.Affine(scale=(0.9, 1.1), translate_percent=(0.05, 0.1), rotate=(-45, 45), shear=(-30, 30), p=0.3),
+            # A.Affine(scale=(0.9, 1.1), translate_percent=(0.05, 0.1), rotate=(-45, 45), shear=(-30, 30), p=0.3),
             # A.Blur(blur_limit=4, p=0.3),
             A.Normalize(),
             ToTensorV2(p=1.0),
@@ -111,7 +111,7 @@ def get_datasets(data_path=ANNOTATIONS_PATH, train_transforms=None, val_transfor
     return train_dataset, val_dataset, test_dataset
 
 
-def get_loaders(batch_size=8, data_path=ANNOTATIONS_PATH, train_transforms=None, val_transforms=None):
+def get_loaders(batch_size=8, data_path=ANNOTATIONS_PATH, num_workers=0, train_transforms=None, val_transforms=None):
     """
         Creates StampDataset objects.
 
@@ -130,6 +130,7 @@ def get_loaders(batch_size=8, data_path=ANNOTATIONS_PATH, train_transforms=None,
         train_dataset,
         batch_size=batch_size,
         shuffle=True,
+        num_workers=num_workers,
         collate_fn=collate_fn, drop_last=True)
 
     val_loader = DataLoader(

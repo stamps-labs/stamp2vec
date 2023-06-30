@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from transformers import PreTrainedModel, PretrainedConfig
 
 from constants import *
 
@@ -78,3 +79,18 @@ class YOLOStamp(nn.Module):
         nb, _, nh, nw= x.shape
         x = x.permute(0, 2, 3, 1).view(nb, nh, nw, self.anchors.shape[0], 5)
         return x
+    
+
+class YoloConfig(PretrainedConfig):
+    model_type = 'yolo'
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+class YoloStamp(PreTrainedModel):
+    config_class = YoloConfig
+    def __init__(self, config):
+        super().__init__(config)
+        self.config = config
+        self.model = YOLOStamp()
+    def forward(self, input):
+        return self.model(input) 
