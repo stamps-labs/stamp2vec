@@ -1,7 +1,7 @@
 from PIL import Image
-from model_torch import EmbeddingModelTorch
+from model import ViTStamp
 def get_embeddings(img_path: str):
-    model = EmbeddingModelTorch()
+    model = ViTStamp.from_pretrained("stamps-labs/vits8-stamp")
     image = Image.open(img_path)
     embeddings = model(image=image)
     return embeddings

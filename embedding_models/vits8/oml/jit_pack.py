@@ -1,11 +1,11 @@
 import torch
-from model_oml import EmbeddingModel
+from model_oml import EmbeddingModelOML
 from PIL import Image
 
 
 
 if __name__ == "__main__":
-    model = EmbeddingModel().extractor.cuda()
+    model = EmbeddingModelOML().extractor.cuda() #Maybe need to be changed to be flexible, perhaps just EmbeddingModelOML().extractor
 
     model.eval()
 
