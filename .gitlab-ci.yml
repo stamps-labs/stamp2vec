@@ -7,4 +7,4 @@ Type-test:
   script:
     - pip install mypy
     - mypy src
-    allow_failure: true
+  allow_failure: true
