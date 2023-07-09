@@ -1,0 +1,10 @@
+stages:
+  -test
+
+Type-test:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install mypy
+    - mypy src
+    allow_failure: true
