@@ -1,5 +1,5 @@
 stages:
-  -test
+  - test
 
 Type-test:
   stage: test
