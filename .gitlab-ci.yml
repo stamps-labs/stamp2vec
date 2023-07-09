@@ -1,5 +1,6 @@
 stages:
   - test
+  - deploy
 
 Type-test:
   stage: test
@@ -23,3 +24,12 @@ Unused-code-test:
   script:
     - pip install vulture
     - vulture src/
+  allow_failure: true
+
+Unit-test:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install pytests
+    - pip install -r requirements.txt
+    - pytest tests/
