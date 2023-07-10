@@ -1,4 +1,4 @@
-from src.embedding_models.vits8.model import ViTStamp
+from embedding_models.vits8.model import ViTStamp
 import torch
 from PIL import Image
 
@@ -7,4 +7,3 @@ def test_vits8():
     model = ViTStamp()
     output = model(image=img_cropped)
     assert output.shape == torch.Size([1,384]), False
-

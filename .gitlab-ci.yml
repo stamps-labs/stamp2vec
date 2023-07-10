@@ -7,7 +7,7 @@ Type-test:
   image: python:3.9
   script:
     - pip install mypy
-    - mypy src
+    - mypy .
   allow_failure: true
 
 Lint-test:
@@ -15,7 +15,7 @@ Lint-test:
   image: python:3.9
   script:
     - pip install flake8
-    - flake8
+    - flake8 .
   allow_failure: true
 
 Unused-code-test:
@@ -23,7 +23,7 @@ Unused-code-test:
   image: python:3.9
   script:
     - pip install vulture
-    - vulture src/
+    - vulture .
   allow_failure: true
 
 Unit-test:
