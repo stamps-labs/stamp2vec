@@ -1,0 +1,37 @@
+<annotation>
+  <folder>images</folder>
+  <filename>img9.png</filename>
+  <path>images\img9.png</path>
+  <source>
+    <database>Unknown</database>
+  </source>
+  <size>
+    <width>784</width>
+    <height>1000</height>
+    <depth>0</depth>
+  </size>
+  <object>
+    <name>oval</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>264</xmin>
+      <ymin>839</ymin>
+      <xmax>397</xmax>
+      <ymax>929</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>triangle</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>507</xmin>
+      <ymin>188</ymin>
+      <xmax>648</xmax>
+      <ymax>346</ymax>
+    </bndbox>
+  </object>
+</annotation>
