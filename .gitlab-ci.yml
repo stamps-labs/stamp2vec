@@ -26,12 +26,13 @@ Unused-code-test:
     - vulture .
   allow_failure: true
 
+cache:
+  paths:
+    - .cache/pip
+
 Unit-test:
   stage: Test
   image: python:3.9
-  cache:
-    paths:
-      - .cache/pip
   script:
     - pip install pytest
     - pip install -r requirements.txt
