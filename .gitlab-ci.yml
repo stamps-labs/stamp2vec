@@ -27,6 +27,7 @@ Unused-code-test:
   allow_failure: true
 
 cache:
+  key: pip-cache
   paths:
     - .cache/pip
 
