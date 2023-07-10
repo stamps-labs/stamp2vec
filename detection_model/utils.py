@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import matplotlib.pyplot as plt
-from constants import *
+from .constants import *
 
 
 def output_tensor_to_boxes(boxes_tensor):
