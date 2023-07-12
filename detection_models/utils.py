@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import matplotlib.pyplot as plt
-from constants import *
+from .constants import *
 
 
 def output_tensor_to_boxes(boxes_tensor):
@@ -109,6 +109,22 @@ def read_data(annotations=Path(ANNOTATIONS_PATH)):
         data.append(img_data)
     return data
 
+def xywh2xyxy(x):
+    """
+        Converts xywh format to xyxy
+
+        Arguments:
+        x -- torch.Tensor or np.array (xywh format)
+
+        Returns:
+        y -- torch.Tensor or np.array (xyxy)
+    """
+    y = x.clone() if isinstance(x, torch.Tensor) else np.copy(x)
+    y[..., 0] = x[..., 0]
+    y[..., 1] = x[..., 1]
+    y[..., 2] = x[..., 0] + x[..., 2] 
+    y[..., 3] = x[..., 1] + x[..., 3] 
+    return y
 
 def boxes_to_tensor(boxes):
     """
