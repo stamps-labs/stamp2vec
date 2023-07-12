@@ -1,5 +1,6 @@
 import torch.nn as nn
 from torch.distributions.normal import Normal
+
 from .constants import *
 
 class Encoder(nn.Module):
