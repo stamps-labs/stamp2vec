@@ -24,6 +24,6 @@ class Vits8Pipeline:
 
     def __call__(self, image) -> torch.Tensor:
         image = image.convert("RGB")
-        img_tensor = self.transform(image).cuda().unsqueeze(0) if self.device == "cuda" else self.transform(image).unsqueeze(0)
+        img_tensor = self.transform(image).to(self.device)
         features = np.array(self.model(img_tensor)[0].detach().cpu())
         return features
