@@ -1,5 +1,5 @@
 import torch
-import cv2
+from PIL import Image, ImageDraw
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -55,31 +55,18 @@ def plot_normalized_img(img, std=STD, mean=MEAN, size=(7,7)):
     plt.show()
     
 
-def visualize_bbox(img, boxes, thickness=2, color=BOX_COLOR, draw_center=True):
-    """
-        Draws boxes on the given image.
-
-        Arguments:
-        img -- torch.Tensor of shape (3, W, H) or numpy.ndarray of shape (W, H, 3)
-        boxes -- list of shape (None, 5)
-        thickness -- number specifying the thickness of box border
-        color -- RGB tuple of shape (3,) specifying the color of boxes
-        draw_center -- boolean specifying whether to draw center or not
-
-        Returns:
-        img_copy -- numpy.ndarray of shape(W, H, 3) containing image with bouning boxes
-    """
-    img_copy = img.cpu().permute(1,2,0).numpy() if isinstance(img, torch.Tensor) else img.copy()
-    for box in boxes:
-        x,y,w,h = int(box[0]), int(box[1]), int(box[2]), int(box[3])
-        img_copy = cv2.rectangle(
-            img_copy,
-            (x,y),(x+w, y+h),
-            color, thickness)
-        if draw_center:
-            center = (x+w//2, y+h//2)
-            img_copy = cv2.circle(img_copy, center=center, radius=3, color=(0,255,0), thickness=2)
-    return img_copy
+def visualize_bbox(image: Image, prediction):
+    img = image.copy()
+    draw = ImageDraw.Draw(img)
+    for i, box in enumerate(prediction):
+        x1, y1, x2, y2 = box.cpu()
+        draw = ImageDraw.Draw(img)
+        text_w, text_h = draw.textsize(str(i + 1))
+        label_y = y1 if y1 <= text_h else y1 - text_h
+        draw.rectangle((x1, y1, x2, y2), outline='red')
+        draw.rectangle((x1, label_y, x1+text_w, label_y+text_h), outline='red', fill='red')
+        draw.text((x1, label_y), str(i + 1), fill='white')
+    return img
 
 
 def read_data(annotations=Path(ANNOTATIONS_PATH)):
