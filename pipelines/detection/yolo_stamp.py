@@ -2,8 +2,7 @@ from typing import Any
 from detection_models.model import YOLOStamp
 from detection_models.constants import *
 from detection_models.utils import *
-import albumentations as A
-from albumentations.pytorch.transforms import ToTensorV2
+import torchvision.transforms as T
 import torch
 from huggingface_hub import hf_hub_download
 import numpy as np
@@ -12,9 +11,10 @@ class YoloStampPipeline:
     def __init__(self):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.model = YOLOStamp()
-        self.transform = A.Compose([
-            A.Normalize(),
-            ToTensorV2(p=1.0),
+        self.transform = T.Compose([
+            T.ToTensor(),
+            T.Normalize(mean=(0.485, 0.456, 0.406), 
+                        std=(0.229, 0.224, 0.225)),
         ])
     
     @classmethod
@@ -34,7 +34,7 @@ class YoloStampPipeline:
         shape = torch.tensor(image.size)
         coef =  torch.hstack((shape, shape)) / 448
         image = image.convert("RGB").resize((448, 448))
-        image_tensor = self.transform(image=np.array(image))["image"]
+        image_tensor = self.transform(image)
         output = self.model(image_tensor.unsqueeze(0).to(self.device))
         boxes = output_tensor_to_boxes(output[0].detach().cpu())
         boxes = nonmax_suppression(boxes=boxes)
