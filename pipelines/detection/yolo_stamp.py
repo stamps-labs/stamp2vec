@@ -1,7 +1,7 @@
 from typing import Any
-from detection_models.model import YOLOStamp
-from detection_models.constants import *
-from detection_models.utils import *
+from detection_models.yolo_stamp.model import YOLOStamp
+from detection_models.yolo_stamp.constants import *
+from detection_models.yolo_stamp.utils import *
 import albumentations as A
 from albumentations.pytorch.transforms import ToTensorV2
 import torch
