@@ -18,7 +18,7 @@ class DeepLabv3Pipeline:
         self.model = None
 
     @classmethod
-    def from_pretrained(cls, model_path_hf: str = None, filename_hf: str = None, local_model_path: str = None):
+    def from_pretrained(cls, model_path_hf: str = None, filename_hf: str = "weights.pt", local_model_path: str = None):
         dl = cls()
         if model_path_hf is not None and filename_hf is not None:
             dl.model = torch.load(hf_hub_download(model_path_hf, filename=filename_hf), map_location='cpu')
