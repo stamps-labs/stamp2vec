@@ -33,6 +33,10 @@ ML models using pytorch, app with Gradio, api with FastAPI
    4. Get stamps embeddings
    5. Show cosine similarity between all stamps on the document
 2. Pipelines for ML models.
+   1. Easy to use
+   2. Includes post and pre processing
+   3. Allows storing models on dedicated server
+   4. Backwards compatibility
 3. FastAPI server with endpoints:
    1. `/bounding-boxes`
    2. `/image-w-boxes`
