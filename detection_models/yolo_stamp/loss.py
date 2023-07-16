@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from utils import *
+from .utils import *
 
 """
     Class for loss for training YOLO model.

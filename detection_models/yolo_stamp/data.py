@@ -9,7 +9,7 @@ from PIL import Image
 from pathlib import Path
 from random import randint
 
-from utils import *
+from .utils import *
 
 """
     Dataset class for storing stamps data.

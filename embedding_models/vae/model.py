@@ -3,7 +3,6 @@ from torch.distributions.normal import Normal
 
 from .constants import *
 
-
 class Encoder(nn.Module):
     '''
     Encoder Class
