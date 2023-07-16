@@ -33,7 +33,7 @@ class YoloStampPipeline:
         shape = torch.tensor(image.size)
         coef =  torch.hstack((shape, shape)) / 448
         image = image.convert("RGB").resize((448, 448))
-        image_tensor = self.transform(image=np.array(image))["image"]
+        image_tensor = self.transform(image)
         output = self.model(image_tensor.unsqueeze(0).to(self.device))
         boxes = output_tensor_to_boxes(output[0].detach().cpu())
         boxes = nonmax_suppression(boxes=boxes)

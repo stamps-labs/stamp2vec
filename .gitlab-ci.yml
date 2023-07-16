@@ -1,0 +1,40 @@
+stages:
+  - Test
+  - deploy
+
+Type-test:
+  stage: Test
+  image: python:3.9
+  script:
+    - pip install mypy
+    - mypy .
+  allow_failure: true
+
+Lint-test:
+  stage: Test
+  image: python:3.9
+  script:
+    - pip install flake8
+    - flake8 .
+  allow_failure: true
+
+Unused-code-test:
+  stage: Test
+  image: python:3.9
+  script:
+    - pip install vulture
+    - vulture .
+  allow_failure: true
+
+cache:
+  key: pip-cache
+  paths:
+    - .cache/pip
+
+Unit-test:
+  stage: Test
+  image: python:3.9
+  script:
+    - pip install pytest
+    - pip install -r requirements.txt
+    - python -m pytest tests/
