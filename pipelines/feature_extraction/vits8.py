@@ -1,7 +1,6 @@
 import torch
 from torchvision import transforms
 from huggingface_hub import hf_hub_download
-import numpy as np
 
 class Vits8Pipeline:
     def __init__(self):
@@ -10,7 +9,7 @@ class Vits8Pipeline:
         self.transform = transforms.ToTensor()
     
     @classmethod
-    def from_pretrained(cls, model_path_hf: str = None, filename_hf: str = None, local_model_path: str = None):
+    def from_pretrained(cls, model_path_hf: str = None, filename_hf: str = "weights.pt", local_model_path: str = None):
         vit = cls()
         if model_path_hf is not None and filename_hf is not None:
             vit.model = torch.jit.load(hf_hub_download(model_path_hf, filename=filename_hf), map_location='cpu')  
@@ -24,6 +23,5 @@ class Vits8Pipeline:
 
     def __call__(self, image) -> torch.Tensor:
         image = image.convert("RGB")
-        img_tensor = self.transform(image).to(self.device)
-        features = np.array(self.model(img_tensor)[0].detach().cpu())
-        return features
+        img_tensor = self.transform(image).to(self.device).unsqueeze(0)
+        return self.model(img_tensor)[0].detach().cpu()
