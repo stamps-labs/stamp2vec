@@ -3,7 +3,7 @@
 
 # Stamp-detection
 
-This project aims to develop a system that utilizes computer vision techniques to recognize and classify stamps. The system takes an input image of a document that may contain stamps and performs various image processing and machine learning algorithms to identify and categorize stamps
+This project aims to develop a system that utilizes computer vision techniques to recognize and classify stamps. The system takes an input image of a document that may contain stamps and performs various image processing and machine learning algorithms to identify and categorize stamps.
 
 ## Introduction
 
@@ -33,7 +33,6 @@ This project utilizes cutting-edge technologies and frameworks to deliver a seam
 
    1. Upload document or choose one of the examples, choose one of available models
         ![1689531949336](image/README/1689531949336.png)
-        *Upload document or choose one of the examples, choose one of available models*
    2. Show bounding boxes of stamps
         ![1689532045977](image/README/1689532045977.png)
    3. Get the coordinates of stamps
@@ -67,4 +66,5 @@ This project utilizes cutting-edge technologies and frameworks to deliver a seam
    3. `/embedding-from-copped`
    4. `/embeddings`
 
-## Usage
+## For customer
+All project resources can be accessed on Hugging Face classroom [stamp labs](https://huggingface.co/stamps-labs)
