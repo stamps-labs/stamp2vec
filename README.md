@@ -1,5 +1,6 @@
 ![coverage](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec/badges/fastapi/coverage.svg)
-![coverage](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec/badges/fastapi/pipeline.svg)
+![pipeline](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec/badges/fastapi/pipeline.svg)
+
 # Stamp-detection
 
 This project aims to develop a system that utilizes computer vision techniques to recognize and classify stamps. The system takes an input image of a document that may contain stamps and performs various image processing and machine learning algorithms to identify and categorize stamps
@@ -29,8 +30,10 @@ This project utilizes cutting-edge technologies and frameworks to deliver a seam
 ## Features
 
 1. An [app on Hugging Face](https://huggingface.co/spaces/stamps-labs/stamp2vec) to interface models. Functionallity includes:
+
    1. Upload document or choose one of the examples, choose one of available models
         ![1689531949336](image/README/1689531949336.png)
+        *Upload document or choose one of the examples, choose one of available models*
    2. Show bounding boxes of stamps
         ![1689532045977](image/README/1689532045977.png)
    3. Get the coordinates of stamps
@@ -40,6 +43,7 @@ This project utilizes cutting-edge technologies and frameworks to deliver a seam
    5. Show cosine similarity between all stamps on the document
         ![1689532107995](image/README/1689532107995.png)
 2. Pipelines for ML models.
+
    1. Easy to use
    2. Includes post- and pre-processing
    3. Allows storing models on dedicated server
@@ -57,6 +61,7 @@ This project utilizes cutting-edge technologies and frameworks to deliver a seam
     print(pipe(img))
    ```
 3. FastAPI server with endpoints:
+
    1. `/bounding-boxes`
    2. `/image-w-boxes`
    3. `/embedding-from-copped`
