@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec/badges/master/pipeline.svg)](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec/commits/master)
+![coverage](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec/badges/fastapi/coverage.svg?job=coverage)
 # Stamp-detection
 
 This project aims to develop a system that utilizes computer vision techniques to recognize and classify stamps. The system takes an input image of a document that may contain stamps and performs various image processing and machine learning algorithms to identify and categorize stamps
