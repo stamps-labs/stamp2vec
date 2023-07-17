@@ -38,3 +38,16 @@ Unit-test:
     - pip install pytest
     - pip install -r requirements.txt
     - python -m pytest tests/
+
+Badge:
+  stage: build
+  image: python:3.9
+  before_script:
+    - pip install anybadge
+  script:
+    - anybadge -l "Last Commit" -v "$(date '+%d.%m.%Y %H:%M')" -f last-commit.svg -c green
+  artifacts:
+    paths:
+      - last-commit.svg
+    when: always
+    expire_in: 4 weeks

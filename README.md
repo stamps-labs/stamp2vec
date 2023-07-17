@@ -42,27 +42,27 @@ This project uses various frameworks and services. The ML models are built using
 
 ## Features
 
-1. A [deployed app on HuggingFace](https://huggingface.co/spaces/stamps-labs/stamp2vec) with simple inference to test models. Functionallity includes:
+1. A [deployed app on HuggingFace](https://huggingface.co/spaces/stamps-labs/stamp2vec) with simple inference to test models. Functionallity includes: <br />
 
-   1. Showing bounding boxes of stamps
+   1. Showing bounding boxes of stamps <br />
         ![1689532045977](media/1689532045977.png)
-   2. Get stamps embeddings
+   2. Get stamps embeddings <br />
         ![1689532091404](media/1689532091404.png)
-   3. (*optional*) Get segmented stamps
+   3. (*optional*) Get segmented stamps <br />
         ![segmented](media/segmented.png)
-   5. Show cosine similarity between all stamps on the document
+   5. Show cosine similarity between all stamps on the document <br />
         ![1689532107995](media/1689532107995.png)
 
-2. No 3rd party libraries for inference.
+2. No 3rd party libraries for inference. <br />
    Lots of different libraries and frameworks are bad for versioning and usage. We had to overcome challenge of using less libraries for usage of this project therefore we have used torch JIT model compiler in order to make this project as lightweight as possible.
 
-3. Pipelines for ML models.
-   Pipelines (*referenced above*) are:
-   1. Easy to use
-   2. Includes post- and pre-processing
-   3. Allows storing models on dedicated server
-   4. Backwards compatibility
-4. FastAPI server with endpoints:
+3. Pipelines for ML models. <br />
+   Pipelines (*referenced above*) are: <br />
+   1. Easy to use <br />
+   2. Includes post- and pre-processing <br />
+   3. Allows storing models on dedicated server <br />
+   4. Backwards compatibility <br />
+4. FastAPI server with endpoints: <br />
 
    1. `/bounding-boxes`
    2. `/image-w-boxes`
@@ -79,18 +79,18 @@ This project uses various frameworks and services. The ML models are built using
 
 
 ## Resources
- This project contains implementation of "Fast and Accurate Deep Learning Model for Stamps Detection for Embedded Devices" [[1]](#1) and incorporates techniques mentioned in "TVAE: Triplet-Based Variational Autoencoder using Metric Learning" [[2]](#2).
- This project also uses Open-Metric-Learning framework [[3]](#3) for training the Deep metric learning models with Triplet Loss and Ultralytics framework [[4]](#4) for YoloV8 training.
+ This project contains implementation of "Fast and Accurate Deep Learning Model for Stamps Detection for Embedded Devices" [[1]](#1) and incorporates techniques mentioned in "TVAE: Triplet-Based Variational Autoencoder using Metric Learning" [[2]](#2). <br />
+ This project also uses Open-Metric-Learning framework [[3]](#3) for training the Deep metric learning models with Triplet Loss and Ultralytics framework [[4]](#4) for YoloV8 training. <br />
 ## For customer
 All project artifacts(models, spaces, *datasets**) can be accessed on HuggingFace classroom [stamps-labs](https://huggingface.co/stamps-labs)
 **in future*
 
 ## References
- <a id="1">[1]</a> Gayer, A., Ershova, D. & Arlazarov, V. Fast and Accurate Deep Learning Model for Stamps Detection for Embedded Devices. Pattern Recognit. Image Anal. 32, 772–779 (2022). https://doi.org/10.1134/S1054661822040046 
- <a id="2">[2]</a>  Ishfaq, H., Hoogi, A., & Rubin, D.L. (2018). TVAE: Triplet-Based Variational Autoencoder using Metric Learning. ArXiv, abs/1802.04403. https://doi.org/10.48550/arXiv.1802.04403
- <a id="3">[3]</a> https://github.com/OML-Team/open-metric-learning
- <a id="4">[4]</a> https://github.com/ultralytics/ultralytics
- <a id="5">[5]</a> https://github.com/pytorch/pytorch
- <a id="6">[6]</a> https://github.com/gradio-app/gradio
- <a id="7">[7]</a> https://github.com/tiangolo/fastapi
- <a id="8">[8]</a> https://huggingface.co/
+ <a id="1">[1]</a> Gayer, A., Ershova, D. & Arlazarov, V. Fast and Accurate Deep Learning Model for Stamps Detection for Embedded Devices. Pattern Recognit. Image Anal. 32, 772–779 (2022). https://doi.org/10.1134/S1054661822040046 <br />
+ <a id="2">[2]</a>  Ishfaq, H., Hoogi, A., & Rubin, D.L. (2018). TVAE: Triplet-Based Variational Autoencoder using Metric Learning. ArXiv, abs/1802. 04403. https://doi.org/10.48550/arXiv.1802.04403 <br />
+ <a id="3">[3]</a> https://github.com/OML-Team/open-metric-learning <br />
+ <a id="4">[4]</a> https://github.com/ultralytics/ultralytics <br />
+ <a id="5">[5]</a> https://github.com/pytorch/pytorch <br />
+ <a id="6">[6]</a> https://github.com/gradio-app/gradio <br />
+ <a id="7">[7]</a> https://github.com/tiangolo/fastapi <br />
+ <a id="8">[8]</a> https://huggingface.co/ <br />
