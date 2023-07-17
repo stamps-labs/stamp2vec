@@ -10,4 +10,3 @@ scikit_learn==1.2.2
 torch==1.13.0
 torchvision==0.14.0
 transformers==4.30.2
-ultralytics==8.0.132
