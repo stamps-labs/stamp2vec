@@ -1,6 +1,7 @@
 stages:
   - Test
-  - deploy
+  - Deploy
+  - Build
 
 Type-test:
   stage: Test
@@ -40,7 +41,7 @@ Unit-test:
     - python -m pytest tests/
 
 Badge:
-  stage: build
+  stage: Build
   image: python:3.9
   before_script:
     - pip install anybadge

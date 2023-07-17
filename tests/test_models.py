@@ -17,21 +17,21 @@ class TestModels:
         return config
 
     def test_vits8(self, config):
-        pipe = Vits8Pipeline.from_pretrained("stamps-labs/vits8-stamp", filename_hf="vits8stamp-torchscript.pth")
+        pipe = Vits8Pipeline.from_pretrained("stamps-labs/vits8-stamp")
         output = pipe(image=config["img_classify"])
         assert output.shape == (384, )
 
     def test_vae(self, config):
-        pipe = VaePipeline.from_pretrained("stamps-labs/vae-encoder", filename_hf="encoder.pth")
+        pipe = VaePipeline.from_pretrained("stamps-labs/vae-encoder")
         output = pipe(image=config["img_classify"])
         assert output.shape == torch.Size([128])
     
     def test_yolov8(self, config):
-        pipe = Yolov8Pipeline.from_pretrained('stamps-labs/yolov8-finetuned', filename_hf="best.torchscript")
+        pipe = Yolov8Pipeline.from_pretrained('stamps-labs/yolov8-finetuned')
         boxes = pipe(image=config["img_detect"])
         assert boxes.shape == torch.Size([1, 4])
     
     def test_yolostamp(self, config):
-        pipe = YoloStampPipeline.from_pretrained('stamps-labs/yolo-stamp', filename_hf='state_dict.pth')
+        pipe = YoloStampPipeline.from_pretrained('stamps-labs/yolo-stamp')
         output = pipe(image=config["img_detect"])
         assert output.shape == torch.Size([1, 4])
