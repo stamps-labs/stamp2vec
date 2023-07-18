@@ -62,16 +62,7 @@ This project uses various frameworks and services. The ML models are built using
    2. Includes post- and pre-processing <br />
    3. Allows storing models on dedicated server <br />
    4. Backwards compatibility <br />
-4. FastAPI server with endpoints: <br />
-
-   1. `/bounding-boxes`
-   2. `/image-w-boxes`
-   3. `/embedding-from-copped`
-   4. `/embeddings`
-5. Good model performance
-   1. Feature extraction model (dino-vits8) was trained using Triplet Loss and achieved **mAP@5 = 0.8**, **cmc@5=0.95**. 
-   2. Dataset that was synthetically assembled for train and test data was extremelly complex and included a lot of artifacts, augmentations, stamp masks.
-6. Various model presets
+4. Various model presets
    During development of this project we trained and experimented with multiple different architectures as well as implemented a few papers in order to achieve the best results in terms of quality and performance. Thus, we have different models for each use case:
    1. Lightweight models for fast inference (Yolo-stamp, VAE)
    2. Heavier models for best results (YOLO v8, dino-vits8)
@@ -81,8 +72,8 @@ This project uses various frameworks and services. The ML models are built using
 ## Resources
  This project contains implementation of "Fast and Accurate Deep Learning Model for Stamps Detection for Embedded Devices" [[1]](#1) and incorporates techniques mentioned in "TVAE: Triplet-Based Variational Autoencoder using Metric Learning" [[2]](#2). <br />
  This project also uses Open-Metric-Learning framework [[3]](#3) for training the Deep metric learning models with Triplet Loss and Ultralytics framework [[4]](#4) for YoloV8 training. <br />
-## For customer
-All project artifacts(models, spaces, *datasets**) can be accessed on HuggingFace classroom [stamps-labs](https://huggingface.co/stamps-labs)
+## Additional information
+All project artifacts(models, spaces, *datasets**) can be accessed on HuggingFace classroom [stamps-labs](https://huggingface.co/stamps-labs) <br />
 **in future*
 
 ## References
