@@ -1,10 +1,6 @@
 # Stamp2vec
 
-This project is **WIP**. [Stamp2vec](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec) is a project which aims to build a stamp detection and feature extraction of stamps. The goal is to provide various end-to-end pipelines for stamp detection and stamp feature extraction. It contains implementation of papers [[1]](#1), [[2]](#2) and uses various frameworks [[3]](#3), [[4]](#4) for achieving high performance and accuracy on the task.
-
-## Introduction
-
-Stamp recognition is a challenging task due to the diverse designs, sizes, and colors of stamps and various informational noise (text, tables) on document scans. Traditional methods of identification involve manual inspection, which is time-consuming. This project aims to automate the stamp recognition process using computer vision.
+This project is **WIP**. [Stamp2vec](https://gitlab.pg.innopolis.university/stamps-labs/stamp2vec) is a project which aims to build a stamp detection and feature extraction of stamps. The goal is to provide various end-to-end pipelines for stamp detection and stamp feature extraction. It contains implementation of papers [[1]](#1), [[2]](#2) and uses various frameworks [[3]](#3), [[4]](#4).
 
 ## Methodology
 
@@ -18,12 +14,8 @@ Embeddings: One of the available embeddings models returns an array of values th
 
 Classification: Embeddings of different stamps can be compared using methods such as cosine similarity.
 
-## Technology
-
-This project uses various frameworks and services. The ML models are built using PyTorch [[5]](#5), a popular open-source machine learning library. The app is built using Gradio [[6]](#6), a user-friendly platform that allows developers to quickly create customizable interfaces for their machine learning models. The API is built using FastAPI [[7]](#7), a modern web framework that offers high performance and scalability. Finally, the project is hosted on HuggingFace [[8]](#8), a leading platform for building and sharing AI models.
-
-##Usage
- In order to use project, installing libraries is essential
+## Usage
+ Install needed libraries
  ```
  pip install -r requirements.txt
  ```
